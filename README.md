@@ -1,2 +1,3 @@
-# certificados
-repositório para postagens dos meus certificados
+### Certificações e Variados
+
+Repo destiando a postagens dos meus certificados, cursos e afins
