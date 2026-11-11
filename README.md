@@ -11,7 +11,7 @@
 <img src="https://img.shields.io/badge/idioma-pt--BR-13204a?style=flat-square" alt="Idioma pt-BR">
 <img src="https://img.shields.io/badge/status-em%20atualiza%C3%A7%C3%A3o-c9a54b?style=flat-square" alt="Status: em atualização">
 
-[Galeria](#-galeria) · [Certificados](#-certificados) · [Linha do tempo](#-linha-do-tempo) · [Áreas](#-áreas-de-conhecimento) · [Verificação](#-como-verificar) · [Estrutura](#-estrutura-do-repositório) · [Adicionar](#-como-adicionar-um-certificado) · [Privacidade](#-privacidade-e-uso)
+[Galeria](#-galeria) · [Certificados](#-certificados) · [Áreas](#-áreas-de-conhecimento) · [Verificação](#-como-verificar) · [Privacidade](#-privacidade-e-uso)
 
 </div>
 
@@ -19,8 +19,7 @@
 
 > [!NOTE]
 > Este é um repositório **pessoal**. Os PDFs são os arquivos originais baixados de cada plataforma, sem edição, e todos
-> têm um link de verificação na própria emissora (veja [Como verificar](#-como-verificar)). Os nomes dos arquivos
-> seguem um padrão fixo, descrito em [Estrutura do repositório](#-estrutura-do-repositório).
+> têm um link de verificação na própria emissora (veja [Como verificar](#-como-verificar)).
 
 Este repositório reúne os certificados dos cursos que concluí durante a graduação em Desenvolvimento de Software
 Multiplataforma na Fatec Jacareí e fora dela. Hoje são três: dois da Cisco Networking Academy, oferecidos pela própria
@@ -84,15 +83,6 @@ um a um para saber o que cada um comprova.
 
 </details>
 
-## 🧭 Linha do tempo
-
-```mermaid
-timeline
-    title Certificados concluídos em 2026
-    Setembro : 15/09 Linux Unhatched : 18/09 Curso básico de Git
-    Novembro : 09/11 IT Essentials 8
-```
-
 ## 🧩 Áreas de conhecimento
 
 | Área | Certificado | Nível |
@@ -115,47 +105,6 @@ abaixo são os mesmos que o QR code de cada PDF abre.
 > [!TIP]
 > A página de verificação da Cisco Networking Academy depende de JavaScript para mostrar os dados do certificado. Se
 > aparecer só o título da página, habilite o JavaScript no navegador.
-
-## 📁 Estrutura do repositório
-
-```text
-certificados/
-├── README.md
-├── certificados/
-│   ├── cisco-netacad/
-│   │   ├── 2026-09-15-linux-unhatched.pdf
-│   │   └── 2026-11-09-it-essentials-8.pdf
-│   └── cursa/
-│       └── 2026-09-18-curso-basico-de-git.pdf
-└── docs/
-    ├── assets/          # banner e logo do README (SVG)
-    └── previews/        # prévia de cada certificado (JPEG, 900 px de largura)
-```
-
-Convenção dos nomes: `AAAA-MM-DD-nome-do-curso.pdf`, com a **data de conclusão**, letras minúsculas, sem acentos e sem
-dados da conta da plataforma no nome. A prévia usa o mesmo nome do PDF, com a extensão `.jpg`.
-
-## 📥 Como adicionar um certificado
-
-1. Baixe o PDF na plataforma e salve em `certificados/<emissor>/AAAA-MM-DD-nome-do-curso.pdf`, criando a pasta do emissor
-   se ela ainda não existir.
-2. Gere a prévia (requer `poppler-utils` e `imagemagick`):
-
-   ```sh
-   pdftoppm -r 150 -png -singlefile certificados/<emissor>/AAAA-MM-DD-nome-do-curso.pdf /tmp/previa
-   convert /tmp/previa.png -resize 900x -quality 86 -strip docs/previews/AAAA-MM-DD-nome-do-curso.jpg
-   ```
-
-3. Atualize este README em cinco pontos: a célula da [galeria](#-galeria), a linha da tabela de
-   [certificados](#-certificados) com o bloco recolhível correspondente, a [linha do tempo](#-linha-do-tempo), a tabela de
-   [áreas](#-áreas-de-conhecimento), a tabela de [verificação](#-como-verificar) e o número do selo `certificados-N` no
-   topo.
-4. Confira o link de verificação (o QR code do PDF abre o mesmo endereço) e faça o commit:
-
-   ```sh
-   git add -A
-   git commit -m "add: certificado <curso> (<emissor>)"
-   ```
 
 ## 🔒 Privacidade e uso
 
